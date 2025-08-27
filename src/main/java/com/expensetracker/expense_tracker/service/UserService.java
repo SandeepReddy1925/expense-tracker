@@ -14,8 +14,8 @@ public class UserService {
     UserRepository userRepository;
     public User registerUser(User newUser)
     {
-        newUser.setCreatedAt(LocalDate.now());
-        newUser.setCreatedBy("USER");
+//        newUser.setCreatedAt(LocalDate.now());
+//        newUser.setCreatedBy("USER");
         return userRepository.save(newUser);
     }
 

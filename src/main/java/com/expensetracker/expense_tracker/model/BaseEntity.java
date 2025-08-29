@@ -1,5 +1,6 @@
 package com.expensetracker.expense_tracker.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
@@ -22,17 +23,22 @@ public abstract class BaseEntity {
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
+    @JsonIgnore
     private LocalDateTime createdAt;
 
     @CreatedBy
     @Column(nullable = false, updatable = false)
+    @JsonIgnore
     private String createdBy;
 
     @LastModifiedDate
     @Column(insertable = false)
+    @JsonIgnore
     private LocalDateTime modifiedAt;
 
     @LastModifiedBy
     @Column(insertable = false)
+    @JsonIgnore
+
     private String modifiedBy;
 }
